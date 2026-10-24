@@ -1,0 +1,25 @@
+enum userStatus{
+   ACTIVE
+   BANNED
+}
+
+enum Role{
+    CUSTOMER
+    TECHNICIAN
+    ADMIN
+}
+
+enum pricingType{
+    FIXED
+    HOURLY
+}
+
+enum bookingStatus{
+    REQUESTED
+    ACCEPTED
+    DECLINED
+    COMPLETED
+    CANCELLED
+    PAID
+    IN_PROGRESS
+}

@@ -1,0 +1,30 @@
+model Bookings{
+    id String @id @default(uuid())
+
+    customerId String 
+    user User @relation(fields: [customerId], references: [id])
+
+    technicianId String
+    technician TechnicianProfiles @relation(fields: [technicianId], references: [id])
+
+    serviceId String
+    service Services @relation(fields: [serviceId], references: [id])
+
+    scheduledAt DateTime
+    estimatedDuration Int
+    serviceAddress String @db.Text
+    customerNote String? @db.Text
+    price Decimal @db.Decimal(10,2)
+    status bookingStatus @default(REQUESTED)
+
+    acceptedAt DateTime?
+    startedAt DateTime?
+    completedAt DateTime?
+    cancelledAt DateTime?
+    cancellationReason String? @db.Text
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("bookings")
+}
