@@ -1,22 +1,22 @@
-model Services{
-    id String @id @default(uuid())
+model Services {
+  id String @id @default(uuid())
 
-    technicianId String
-    technician TechnicianProfiles @relation(fields: [technicianId], references: [id])
+  technicianId String
+  technician   TechnicianProfiles @relation(fields: [technicianId], references: [id])
 
-    categoryId String @unique
-    category Categories @relation(fields: [categoryId], references: [id])
+  categoryId String     @unique
+  category   Categories @relation(fields: [categoryId], references: [id])
 
-    title String @db.VarChar(255)
-    description String @db.Text
-    price Decimal @db.Decimal(10,2)
-    pricingType pricingType @default(FIXED)
-    estimatedDuration Int
-    isActive Boolean @default(true)
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  title             String      @db.VarChar(255)
+  description       String      @db.Text
+  price             Decimal     @db.Decimal(10, 2)
+  pricingType       pricingType @default(FIXED)
+  estimatedDuration Int
+  isActive          Boolean     @default(true)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
 
-    bookings Bookings[]
+  bookings Bookings[]
 
-    @@map("services")
+  @@map("services")
 }
