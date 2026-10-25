@@ -17,3 +17,4 @@ router.get("/me",authController.getMe)
 
 
 export const authRoutes=router;
+
