@@ -5,6 +5,17 @@ const createBooking=catchAsync(async(req:Request, res:Response, next:NextFunctio
 
 })
 
+const getAllBookings=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+
+})
+
+const getBookingById=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+
+})
+
+
 export const bookingController={
-    createBooking
+    createBooking,
+    getAllBookings,
+    getBookingById,
 }

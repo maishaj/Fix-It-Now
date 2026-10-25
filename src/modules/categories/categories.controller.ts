@@ -5,6 +5,11 @@ const getAllCategories=catchAsync(async(req:Request, res:Response, next:NextFunc
      
 })
 
+const createCategory=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+     
+})
+
 export const categoryController={
-    getAllCategories
+    getAllCategories,
+    createCategory
 }
