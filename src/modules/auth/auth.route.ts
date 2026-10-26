@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { authController } from "./auth.controller";
+import { auth } from "../../middlewares/auth";
 
 const router=Router();
 
@@ -13,7 +14,7 @@ router.post("/login",authController.loginUser);
 router.post("refresh-token",authController.refreshToken);
 
 //Get current authenticated user
-router.get("/me",authController.getMe)
+router.get("/me",auth(),authController.getMe)
 
 
 export const authRoutes=router;

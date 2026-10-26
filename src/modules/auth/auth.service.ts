@@ -113,8 +113,22 @@ const refreshToken=async(refreshToken:string)=>{
     
 }
 
-const getMe=async()=>{
-
+const getMe=async(id:string)=>{
+    const user=await prisma.users.findUniqueOrThrow({
+        where:{
+            id
+        },
+        select:{
+            id:true,
+            name:true,
+            email:true,
+            phone:true,
+            profileImage:true,
+            role:true,
+            status:true
+        }
+    });
+    return user;
 }
 
 export const authService={
