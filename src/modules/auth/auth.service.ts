@@ -51,7 +51,7 @@ const loginUser=async(payload:ILoginUser)=>{
    const user=await prisma.users.findUniqueOrThrow({
     where:{
         email
-    }
+    },
    });
 
    // Step 02: Check if password is correct or not

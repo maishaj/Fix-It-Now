@@ -4,7 +4,7 @@ model Services {
   technicianId String
   technician   TechnicianProfiles @relation(fields: [technicianId], references: [id])
 
-  categoryId String     @unique
+  categoryId String 
   category   Categories @relation(fields: [categoryId], references: [id])
 
   title             String      @db.VarChar(255)
